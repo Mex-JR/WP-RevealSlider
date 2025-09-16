@@ -1,0 +1,130 @@
+.reveal-slider-admin-page .postbox .hndle {
+    cursor: default;
+}
+
+.reveal-slider-admin-page .image-upload-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.reveal-slider-admin-page .image-upload-column {
+    flex: 1;
+}
+
+.reveal-slider-admin-page .image-uploader {
+    border: 2px dashed #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.reveal-slider-admin-page .image-uploader:hover {
+    border-color: #0073aa;
+}
+
+.reveal-slider-admin-page .image-preview {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.reveal-slider-admin-page .image-preview img {
+    max-width: 100%;
+    max-height: 300px;
+    height: auto;
+    border: none;
+    padding: 0;
+    background: transparent;
+}
+
+.reveal-slider-admin-page .image-preview span {
+    color: #555;
+    font-style: italic;
+}
+
+.reveal-slider-admin-page #postbox-container-1 .postbox .inside p {
+    margin-bottom: 15px;
+}
+
+.reveal-slider-admin-page #postbox-container-1 .postbox .inside label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.reveal-slider-admin-page .submit {
+    padding: 0;
+    margin: 0;
+}
+
+.reveal-slider-admin-page .button-large {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.copy-shortcode {
+    margin-left: 10px;
+    color: #0073aa;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.copy-shortcode:hover {
+    color: #005a87;
+}
+
+.delete-slider {
+    margin-left: 5px;
+    color: #a00;
+}
+
+.delete-slider:hover {
+    color: #dc3232;
+}
+
+.reveal-slider-error {
+    color: #dc3232;
+    font-weight: bold;
+    padding: 10px;
+    background: #fff2f2;
+    border: 1px solid #dc3232;
+    border-radius: 4px;
+}
+
+.reveal-slider-success {
+    color: #46b450;
+    font-weight: bold;
+    padding: 10px;
+    background: #f7fff7;
+    border: 1px solid #46b450;
+    border-radius: 4px;
+}
+
+/* Loading states */
+.reveal-slider-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.reveal-slider-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #0073aa;
+    border-radius: 50%;
+    animation: reveal-slider-spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes reveal-slider-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

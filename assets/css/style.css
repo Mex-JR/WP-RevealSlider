@@ -1,0 +1,294 @@
+/**
+ * Reveal Slider Plugin Styles
+ *
+ * This file contains all the CSS styles for the
+ * Reveal Slider plugin frontend display.
+ */
+
+/* Error and placeholder styles */
+.reveal-slider-placeholder,
+.reveal-slider-error {
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border: 1px dashed #ccc;
+    border-radius: 4px;
+    font-style: italic;
+    color: #666;
+}
+
+.reveal-slider-error {
+    background-color: #fff2f2;
+    border-color: #dc3232;
+    color: #dc3232;
+}
+
+/* Main slider wrapper */
+.reveal-slider-wrapper {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+}
+
+.reveal-slider-container {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Before and after images */
+.reveal-slider-before,
+.reveal-slider-after {
+    position: relative;
+    overflow: hidden;
+}
+
+.reveal-slider-before img,
+.reveal-slider-after img {
+    display: block;
+    width: 100%;
+    height: auto;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.reveal-slider-after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Horizontal slider */
+.reveal-slider-horizontal .reveal-slider-after {
+    clip-path: inset(0 0 0 50%);
+}
+
+/* Vertical slider */
+.reveal-slider-vertical .reveal-slider-after {
+    clip-path: inset(50% 0 0 0);
+}
+
+/* Labels */
+.reveal-slider-label {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.reveal-slider-label-before {
+    top: 20px;
+    left: 20px;
+}
+
+.reveal-slider-label-after {
+    top: 20px;
+    right: 20px;
+}
+
+.reveal-slider-vertical .reveal-slider-label-before {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.reveal-slider-vertical .reveal-slider-label-after {
+    bottom: 20px;
+    left: 50%;
+    right: auto;
+    top: auto;
+    transform: translateX(-50%);
+}
+
+/* Handle */
+.reveal-slider-handle {
+    position: absolute;
+    z-index: 10;
+    cursor: ew-resize;
+}
+
+.reveal-slider-horizontal .reveal-slider-handle {
+    top: 0;
+    bottom: 0;
+    width: 5px; /* user requested 5px line */
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: ew-resize;
+}
+
+
+.reveal-slider-vertical .reveal-slider-handle {
+    left: 0;
+    right: 0;
+    height: 5px; /* user requested 5px line */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: ns-resize;
+}
+
+.reveal-slider-handle-line {
+    position: absolute;
+    background: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.reveal-slider-horizontal .reveal-slider-handle-line {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    cursor: ew-resize; /* cursor applied to the whole visible line */
+}
+
+.reveal-slider-vertical .reveal-slider-handle-line {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    cursor: ns-resize; /* cursor applied to the whole visible line */
+}
+
+/* Handle button */
+.reveal-slider-handle-button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.reveal-slider-horizontal .reveal-slider-handle-button {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.reveal-slider-vertical .reveal-slider-handle-button {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.reveal-slider-handle-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Hide the circular handle for non-arrow control types; show it for arrows */
+
+
+/* When control type is not arrows, hide the circular handle visually */
+.reveal-slider-wrapper[data-control-type="line"] .reveal-slider-handle-button,
+.reveal-slider-wrapper[data-control-type="hover"] .reveal-slider-handle-button {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+/* Control type specific styles */
+.reveal-slider-wrapper[data-control-type="line"] .reveal-slider-handle-arrow-left,
+.reveal-slider-wrapper[data-control-type="line"] .reveal-slider-handle-arrow-right,
+.reveal-slider-wrapper[data-control-type="hover"] .reveal-slider-handle-arrow-left,
+.reveal-slider-wrapper[data-control-type="hover"] .reveal-slider-handle-arrow-right {
+    display: none; /* hide arrows when not using arrow controls */
+}
+
+/* Make the handle line more prominent for line/hover types */
+.reveal-slider-wrapper[data-control-type="line"] .reveal-slider-handle-line,
+.reveal-slider-wrapper[data-control-type="hover"] .reveal-slider-handle-line {
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 0 6px rgba(0,0,0,0.4);
+}
+
+/* If hover-only, remove pointer cursor for handle (user interacts via hover over container) */
+.reveal-slider-wrapper[data-control-type="hover"] .reveal-slider-handle {
+    cursor: default;
+}
+
+/* If line-only, still allow drag cursor on the line */
+.reveal-slider-wrapper[data-control-type="line"] .reveal-slider-handle {
+    cursor: ew-resize;
+}
+
+/* Hover control: initial blurred after-image (approx. '50% blur' visual) */
+.reveal-slider-after.reveal-slider-hover-blurred img {
+    /* Use a CSS variable so the blur level can be tweaked later; default ~6px */
+    filter: blur(var(--reveal-hover-blur, 6px));
+    transition: filter 220ms ease, opacity 220ms ease;
+}
+
+/* When blur removed, ensure smooth transition back to clear */
+.reveal-slider-after img {
+    transition: filter 220ms ease, opacity 220ms ease;
+}
+
+/* Handle arrows */
+.reveal-slider-handle-arrow-left,
+.reveal-slider-handle-arrow-right {
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.reveal-slider-horizontal .reveal-slider-handle-arrow-left {
+    border-width: 6px 8px 6px 0;
+    border-color: transparent #666 transparent transparent;
+    margin-right: 2px;
+}
+
+.reveal-slider-horizontal .reveal-slider-handle-arrow-right {
+    border-width: 6px 0 6px 8px;
+    border-color: transparent transparent transparent #666;
+    margin-left: 2px;
+}
+
+.reveal-slider-vertical .reveal-slider-handle-arrow-left {
+    border-width: 8px 6px 0 6px;
+    border-color: #666 transparent transparent transparent;
+    margin-bottom: 2px;
+}
+
+.reveal-slider-vertical .reveal-slider-handle-arrow-right {
+    border-width: 0 6px 8px 6px;
+    border-color: transparent transparent #666 transparent;
+    margin-top: 2px;
+}
+
+/* Touch and mobile optimizations */
+@media (max-width: 768px) {
+    .reveal-slider-handle-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .reveal-slider-label {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
+
+/* Responsive */
+.reveal-slider-wrapper {
+    max-width: 100%;
+    height: auto;
+}
+
+.reveal-slider-wrapper img {
+    max-width: 100%;
+    height: auto;
+}

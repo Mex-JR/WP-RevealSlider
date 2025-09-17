@@ -1,5 +1,5 @@
 === Reveal Slider ===
-Contributors: flowfunnel
+Contributors: full360digital
 Tags: before after, image comparison, slider, comparison slider, image slider
 Requires at least: 5.0
 Tested up to: 6.8

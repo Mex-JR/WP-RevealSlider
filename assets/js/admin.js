@@ -6,7 +6,7 @@ jQuery(document).ready(function($) {
 
     // Quick sanity log to ensure admin script is loaded
     if ( window.console && console.log ) {
-        console.log('reveal-slider admin.js loaded');
+        console.log('flowfunnel-reveal-slider admin.js loaded');
     }
 
     // Media uploader functionality (delegated to support .image-uploader)
@@ -102,8 +102,8 @@ jQuery(document).ready(function($) {
 
         // Prepare data
         var formData = {
-            action: 'save_reveal_slider',
-            nonce: revealSliderAjax.nonce,
+            action: 'flowfunnel_save_reveal_slider',
+            nonce: flowfunnelRevealSliderAjax.nonce,
             slider_id: form.find('input[name="slider_id"]').val(),
             slider_name: form.find('input[name="slider_name"]').val(),
             before_image: form.find('input[name="before_image"]').val(),
@@ -116,7 +116,7 @@ jQuery(document).ready(function($) {
         };
 
         // Send AJAX request
-        $.post(revealSliderAjax.ajaxurl, formData)
+        $.post(flowfunnelRevealSliderAjax.ajaxurl, formData)
             .done(function(response) {
                 if (response.success) {
                     // Show success message and redirect
@@ -153,13 +153,13 @@ jQuery(document).ready(function($) {
 
         // Prepare data
         var formData = {
-            action: 'delete_reveal_slider',
-            nonce: revealSliderAjax.nonce,
+            action: 'flowfunnel_delete_reveal_slider',
+            nonce: flowfunnelRevealSliderAjax.nonce,
             slider_id: sliderId
         };
 
         // Send AJAX request
-        $.post(revealSliderAjax.ajaxurl, formData)
+        $.post(flowfunnelRevealSliderAjax.ajaxurl, formData)
             .done(function(response) {
                 if (response.success) {
                     row.fadeOut(function() {

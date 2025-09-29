@@ -243,5 +243,5 @@ jQuery(document).ready(function($) {
     // Add focus styles and accessibility
     $('.reveal-slider-handle-button').attr('tabindex', '0').attr('role', 'slider');
 
-    console.log('Reveal Slider plugin loaded and initialized');
+    console.log('Flowfunnel Reveal Slider plugin loaded and initialized');
 });

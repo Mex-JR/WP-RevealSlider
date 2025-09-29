@@ -1,4 +1,4 @@
-=== Reveal Slider ===
+=== Flowfunnel Reveal Slider ===
 Contributors: full360digital
 Tags: before after, image comparison, slider, comparison slider, image slider
 Requires at least: 5.0
@@ -12,7 +12,7 @@ A powerful and user-friendly WordPress plugin for creating customizable before a
 
 == Description ==
 
-Reveal Slider is a robust WordPress plugin that allows you to easily create and embed interactive "before and after" image comparison sliders on your website. Perfect for photographers, designers, contractors, and anyone who wants to showcase transformations, improvements, or comparisons in an engaging way.
+Flowfunnel Reveal Slider is a robust WordPress plugin that allows you to easily create and embed interactive "before and after" image comparison sliders on your website. Perfect for photographers, designers, contractors, and anyone who wants to showcase transformations, improvements, or comparisons in an engaging way.
 
 ### Key Features
 
@@ -21,7 +21,7 @@ Reveal Slider is a robust WordPress plugin that allows you to easily create and 
 * **Multiple Orientations**: Choose between horizontal and vertical slider orientations
 * **Customizable Controls**: Three control types - arrows, line, and hover
 * **Responsive Design**: Fully responsive and touch-friendly for all devices
-* **Shortcode Support**: Simple shortcode `[reveal_slider id="1"]` for easy embedding
+* **Shortcode Support**: Simple shortcode `[flowfunnel_reveal_slider id="1"]` for easy embedding
 * **Admin Dashboard**: User-friendly admin interface for managing all your sliders
 * **Custom Labels**: Add custom text labels for before and after images
 * **Position Control**: Set initial slider position (0-100%)
@@ -54,7 +54,7 @@ The plugin includes full Gutenberg block support for easy integration with the W
 
 == Installation ==
 
-1. Upload the `reveal-slider` folder to the `/wp-content/plugins/` directory
+1. Upload the `flowfunnel-reveal-slider` folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Go to **Reveal Sliders** in your admin menu to create your first slider
 4. Use the generated shortcode to embed sliders on your pages/posts
@@ -63,7 +63,7 @@ The plugin includes full Gutenberg block support for easy integration with the W
 
 = How do I add a slider to my page? =
 
-After creating a slider in the admin dashboard, you'll get a shortcode like `[reveal_slider id="1"]`. Simply copy and paste this shortcode into any page, post, or custom post type.
+After creating a slider in the admin dashboard, you'll get a shortcode like `[flowfunnel_reveal_slider id="1"]`. Simply copy and paste this shortcode into any page, post, or custom post type.
 
 = Can I have multiple sliders on one page? =
 
@@ -71,7 +71,7 @@ Yes! You can create as many sliders as you need and embed them anywhere on your 
 
 = Is the slider responsive? =
 
-Yes, Reveal Slider is fully responsive and works perfectly on all devices including mobile phones and tablets.
+Yes, Flowfunnel Reveal Slider is fully responsive and works perfectly on all devices including mobile phones and tablets.
 
 = Can I customize the appearance? =
 
@@ -113,7 +113,7 @@ Yes, you can use both uploaded images from your media library and external image
 == Upgrade Notice ==
 
 = 1.0.0 =
-Initial release of Reveal Slider plugin.
+Initial release of Flowfunnel Reveal Slider plugin.
 
 == Support ==
 

@@ -1,9 +1,9 @@
 <?php
 /**
- * Utility functions for the Reveal Slider plugin
+ * Utility functions for the Flowfunnel Reveal Slider plugin
  *
  * This file contains helper functions and utilities
- * for the Reveal Slider plugin functionality.
+ * for the Flowfunnel Reveal Slider plugin functionality.
  */
 
 // Prevent direct access
@@ -17,22 +17,22 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param int $slider_id The slider ID
  * @return object|null Slider data or null if not found
  */
-function reveal_slider_get_slider( $slider_id ) {
+function flowfunnel_reveal_slider_get_slider( $slider_id ) {
 	global $wpdb;
-	$table_name = $wpdb->prefix . 'reveal_sliders';
+	$table_name = $wpdb->prefix . 'flowfunnel_reveal_sliders';
 
-	$cache_key = 'reveal_slider_' . $slider_id;
-	$slider    = wp_cache_get( $cache_key, 'reveal_slider' );
+	$cache_key = 'flowfunnel_reveal_slider_' . $slider_id;
+	$slider    = wp_cache_get( $cache_key, 'flowfunnel_reveal_slider' );
 	if ( false === $slider ) {
 		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
 		$slider = $wpdb->get_row(
 			$wpdb->prepare(
-				"SELECT * FROM `{$wpdb->prefix}reveal_sliders` WHERE id = %d",
+				"SELECT * FROM `{$wpdb->prefix}flowfunnel_reveal_sliders` WHERE id = %d",
 				$slider_id
 			)
 		);
 		if ( $slider ) {
-			wp_cache_set( $cache_key, $slider, 'reveal_slider' );
+			wp_cache_set( $cache_key, $slider, 'flowfunnel_reveal_slider' );
 		}
 	}
 	return $slider;
@@ -44,7 +44,7 @@ function reveal_slider_get_slider( $slider_id ) {
  * @param string $url The image URL to validate
  * @return bool True if valid image URL, false otherwise
  */
-function reveal_slider_validate_image_url( $url ) {
+function flowfunnel_reveal_slider_validate_image_url( $url ) {
 	if ( empty( $url ) ) {
 		return false;
 	}
@@ -67,7 +67,7 @@ function reveal_slider_validate_image_url( $url ) {
  * @param array $settings Raw settings array
  * @return array Sanitized settings
  */
-function reveal_slider_sanitize_settings( $settings ) {
+function flowfunnel_reveal_slider_sanitize_settings( $settings ) {
 	$sanitized = array();
 
 	$sanitized['name']             = isset( $settings['name'] ) ? sanitize_text_field( $settings['name'] ) : '';
@@ -90,7 +90,7 @@ function reveal_slider_sanitize_settings( $settings ) {
  *
  * @return array Default settings
  */
-function reveal_slider_get_default_settings() {
+function flowfunnel_reveal_slider_get_default_settings() {
 	return array(
 		'name'             => '',
 		'before_image'     => '',
@@ -108,7 +108,7 @@ function reveal_slider_get_default_settings() {
  *
  * @return bool True if user has permission, false otherwise
  */
-function reveal_slider_user_can_manage() {
+function flowfunnel_reveal_slider_user_can_manage() {
 	return current_user_can( 'manage_options' );
 }
 
@@ -117,18 +117,18 @@ function reveal_slider_user_can_manage() {
  *
  * @return int Number of sliders
  */
-function reveal_slider_get_count() {
+function flowfunnel_reveal_slider_get_count() {
 	global $wpdb;
-	$table_name = $wpdb->prefix . 'reveal_sliders';
+	$table_name = $wpdb->prefix . 'flowfunnel_reveal_sliders';
 
-	$cache_key = 'reveal_slider_count';
-	$count     = wp_cache_get( $cache_key, 'reveal_slider' );
+	$cache_key = 'flowfunnel_reveal_slider_count';
+	$count     = wp_cache_get( $cache_key, 'flowfunnel_reveal_slider' );
 	if ( false === $count ) {
 		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
 		$count = (int) $wpdb->get_var(
-			"SELECT COUNT(*) FROM `{$wpdb->prefix}reveal_sliders`"
+			"SELECT COUNT(*) FROM `{$wpdb->prefix}flowfunnel_reveal_sliders`"
 		);
-		wp_cache_set( $cache_key, $count, 'reveal_slider' );
+		wp_cache_set( $cache_key, $count, 'flowfunnel_reveal_slider' );
 	}
 	return $count;
 }

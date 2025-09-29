@@ -39,7 +39,7 @@ class Flowfunnel_Reveal_Slider {
 	 */
 	public function init() {
 		// Register shortcode
-		add_shortcode( 'reveal_slider', array( $this, 'render_shortcode' ) );
+		add_shortcode( 'flowfunnel_reveal_slider', array( $this, 'render_shortcode' ) );
 
 		// Textdomain is loaded automatically for plugins hosted on WordPress.org
 		// If you need to load a custom textdomain from a non-standard location,
